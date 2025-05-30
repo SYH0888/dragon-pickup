@@ -1,0 +1,14 @@
+# noinspection YAMLSchemaValidation
+name: dragon-pickup
+version: '${version}'
+main: pers.ketikai.minecraft.spigot.dragonpickup.DragonPickup
+load: STARTUP
+authors:
+- ketikai
+depend:
+- minecraft-next
+- DragonCore
+commands:
+  dragon-pickup:
+    aliases:
+    - d-pickup
