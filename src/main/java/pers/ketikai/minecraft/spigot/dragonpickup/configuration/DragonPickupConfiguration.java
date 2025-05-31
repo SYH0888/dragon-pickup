@@ -23,7 +23,7 @@ import lombok.NonNull;
 import team.idealstate.sugar.next.context.annotation.component.Configuration;
 import team.idealstate.sugar.next.context.annotation.feature.Scope;
 
-@Configuration(uri = "config.yml", release = "config.yml")
+@Configuration(uri = "config.yml", release = "bundled:config.yml")
 @Scope(Scope.PROTOTYPE)
 @Data
 public class DragonPickupConfiguration {
