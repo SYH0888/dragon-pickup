@@ -29,6 +29,7 @@ import org.bukkit.inventory.meta.ItemMeta;
 import pers.ketikai.minecraft.spigot.dragonpickup.api.configuration.ConfigurationHolder;
 import pers.ketikai.minecraft.spigot.dragonpickup.configuration.DragonPickupConfiguration;
 import team.idealstate.sugar.next.context.annotation.component.Subscriber;
+import team.idealstate.sugar.next.context.annotation.feature.Autowired;
 import team.idealstate.sugar.validate.annotation.NotNull;
 
 @Subscriber
@@ -57,6 +58,7 @@ public class PlayerPickupSubscriber implements Listener, ConfigurationHolder {
     }
 
     @Override
+    @Autowired
     public void setConfiguration(@NotNull DragonPickupConfiguration configuration) {
         this.configuration = configuration;
     }
