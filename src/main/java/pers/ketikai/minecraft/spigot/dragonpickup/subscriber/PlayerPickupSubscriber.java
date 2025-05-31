@@ -54,7 +54,7 @@ public class PlayerPickupSubscriber implements Listener, ConfigurationHolder {
             itemStack.setItemMeta(meta);
         }
         PacketSender.putClientSlotItem(player, configuration.getSlot(), itemStack);
-        PacketSender.sendRunFunction(player, "Gui/" + configuration.getHud(), configuration.getFunction(), false);
+        PacketSender.sendRunFunction(player, configuration.getHud(), configuration.getFunction(), false);
     }
 
     @Override
