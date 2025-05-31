@@ -33,4 +33,7 @@ public class DragonPickupConfiguration {
 
     @NonNull
     private final String slot;
+
+    @NonNull
+    private final String function;
 }
