@@ -8,6 +8,7 @@ authors:
 depend:
 - minecraft-next
 - DragonCore
+- NeigeItems
 commands:
   dragon-pickup:
     aliases:
