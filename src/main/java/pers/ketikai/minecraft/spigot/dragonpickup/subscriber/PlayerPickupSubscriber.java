@@ -37,23 +37,13 @@ public class PlayerPickupSubscriber implements Listener, ConfigurationHolder {
 
     private DragonPickupConfiguration configuration;
 
-    @EventHandler(priority = EventPriority.LOWEST)
+    @EventHandler(priority = EventPriority.HIGHEST)
     public void on(EntityPickupItemEvent event) {
         if (!(event.getEntity() instanceof Player)) {
             return;
         }
         Player player = (Player) event.getEntity();
-        ItemStack original = event.getItem().getItemStack();
-        ItemStack itemStack = new ItemStack(original.getType());
-        itemStack.setAmount(original.getAmount());
-        ItemMeta originalMeta = original.getItemMeta();
-        String displayName;
-        if (originalMeta != null && (displayName = originalMeta.getDisplayName()) != null) {
-            ItemMeta meta = itemStack.getItemMeta();
-            meta.setDisplayName(displayName);
-            itemStack.setItemMeta(meta);
-        }
-        PacketSender.putClientSlotItem(player, configuration.getSlot(), itemStack);
+        PacketSender.putClientSlotItem(player, configuration.getSlot(), event.getItem().getItemStack().clone());
         PacketSender.sendRunFunction(player, configuration.getHud(), configuration.getFunction(), false);
     }
 
