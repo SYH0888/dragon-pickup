@@ -37,7 +37,7 @@ public class PlayerPickupSubscriber implements Listener, ConfigurationHolder {
 
     private DragonPickupConfiguration configuration;
 
-    @EventHandler(priority = EventPriority.HIGHEST)
+    @EventHandler(priority = EventPriority.HIGHEST, ignoreCancelled = true)
     public void on(EntityPickupItemEvent event) {
         if (!(event.getEntity() instanceof Player)) {
             return;
